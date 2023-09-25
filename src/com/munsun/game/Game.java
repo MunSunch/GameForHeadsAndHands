@@ -8,6 +8,8 @@ public class Game {
     private Player player;
     private MonsterFabricMethod monsterFabric;
     private PlayerFabricMethod playerFabric;
+    private long pauseSecond;
+    private static final long DEFAULT_PAUSE_SECOND = 500;
 
     public Game(PlayerFabricMethod playerFabric, MonsterFabricMethod monsterFabric) {
         this.monsters = new ArrayList<>();
@@ -16,10 +18,15 @@ public class Game {
     }
 
     public void config(String namePlayer, TypePlayer typePlayer) {
-        this.player = this.playerFabric.create(namePlayer, typePlayer);
+        config(namePlayer, typePlayer, DEFAULT_PAUSE_SECOND);
     }
 
-    public void start(int countMonster) {
+    public void config(String namePlayer, TypePlayer typePlayer, long pauseSecondBetweenLevel) {
+        this.player = this.playerFabric.create(namePlayer, typePlayer);
+        this.pauseSecond = pauseSecondBetweenLevel;
+    }
+
+    public void start(int countMonster) throws InterruptedException {
         addMonsters(countMonster);
         int countDefeatedMonsters = 0;
         for (int i = 0; i < monsters.size() && player.isLive(); i++) {
@@ -44,7 +51,9 @@ public class Game {
                 System.out.println("Монстр повержен...");
                 countDefeatedMonsters++;
             }
+            Thread.sleep(pauseSecond);
         }
+        System.out.println("==================================");
         if(countDefeatedMonsters == countMonster)
             System.out.println("Победа!");
         else
