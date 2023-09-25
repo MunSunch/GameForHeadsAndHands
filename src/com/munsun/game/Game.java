@@ -9,7 +9,7 @@ public class Game {
     private MonsterFabricMethod monsterFabric;
     private PlayerFabricMethod playerFabric;
     private long pauseSecond;
-    private static final long DEFAULT_PAUSE_SECOND = 500;
+    public static final long DEFAULT_PAUSE_SECOND = 500;
 
     public Game(PlayerFabricMethod playerFabric, MonsterFabricMethod monsterFabric) {
         this.monsters = new ArrayList<>();
