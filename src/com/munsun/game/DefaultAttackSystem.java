@@ -19,7 +19,7 @@ public class DefaultAttackSystem implements AttackSystem{
     public int attack(Entity entity, Entity anotherEntity) {
         int modifierAttack = entity.getValueAttack() - anotherEntity.getValueDefence() + 1;
         boolean success = roleCube(1);
-        if(modifierAttack > 0)
+        if(modifierAttack > 1)
             success = roleCube(modifierAttack - 1);
         if(success) {
             var damage = random.nextInt(entity.getMinDamage(), entity.getMaxDamage()+1);
