@@ -1,10 +1,34 @@
 package com.munsun.game;
 
 public enum TypeMonster {
-    BEGINNER("Камень", 5, 0, 8, 1, 5, new DefaultAttackSystem()),
-    INTERMEDIATE("Скала", 10, 4, 12, 3, 6, new DefaultAttackSystem()),
-    HIGH("Импостер", 16, 4, 22, 4, 14, new DefaultAttackSystem()),
-    BOSS("Азазело", 30, 10, 40, 10, 20, new DefaultAttackSystem());
+    BEGINNER("Камень",
+            5,
+            0,
+            8,
+            1,
+            5,
+            new DefaultAttackSystem()),
+    INTERMEDIATE("Скала",
+            10,
+            4,
+            12,
+            3,
+            6,
+            new DefaultAttackSystem()),
+    HIGH("Импостер",
+            16,
+            4,
+            22,
+            4,
+            14,
+            new DefaultAttackSystem()),
+    BOSS("Азазело",
+            30,
+            10,
+            40,
+            10,
+            20,
+            new DefaultAttackSystem());
 
     private String name;
     private int valueAttack;

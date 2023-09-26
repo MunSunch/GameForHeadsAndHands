@@ -13,7 +13,7 @@ public class Player extends Entity {
     public int healingYourself() {
         if(countHealing != 0) {
             var oldHealth = getHealth();
-            int newHealth = (int)(getHealth() * (coefficientHealing+1));
+            int newHealth = (int)Math.ceil(getHealth() * (coefficientHealing+1));
             setHealth(newHealth);
             countHealing--;
             return newHealth-oldHealth;
