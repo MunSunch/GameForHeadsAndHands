@@ -1,3 +1,6 @@
+Контакты: [@score_msConfig021](https://t.me/score_msConfig021)
+
+
 # Описание задачи
 [Ссылка](https://docs.google.com/document/d/1lfpe1JDCuGMQ3cFyn5oNk2PqRO94z6IqCq6yoTaUsYo/edit)
 ## Описание решения
